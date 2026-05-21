@@ -1,6 +1,5 @@
 package ni.edu.uam.uam_cafe.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -9,35 +8,53 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = CoffeeDarkPrimary,
+    onPrimary = CafeText,
+    primaryContainer = CoffeeDarkSurfaceVariant,
+    onPrimaryContainer = CoffeeDarkPrimary,
+    secondary = MatchaSecondaryLight,
+    onSecondary = CafeText,
+    secondaryContainer = CoffeeDarkSurfaceVariant,
+    onSecondaryContainer = MatchaSecondaryLight,
+    tertiary = HoneyTertiaryLight,
+    background = CoffeeDarkBackground,
+    onBackground = Color(0xFFF4E8DD),
+    surface = CoffeeDarkSurface,
+    onSurface = Color(0xFFF4E8DD),
+    surfaceVariant = CoffeeDarkSurfaceVariant,
+    onSurfaceVariant = Color(0xFFD5C3B6)
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+    primary = CoffeePrimary,
     onPrimary = Color.White,
+    primaryContainer = CoffeePrimaryLight,
+    onPrimaryContainer = CafeText,
+    secondary = MatchaSecondary,
     onSecondary = Color.White,
+    secondaryContainer = MatchaSecondaryLight,
+    onSecondaryContainer = Color(0xFF143B31),
+    tertiary = HoneyTertiary,
     onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    tertiaryContainer = HoneyTertiaryLight,
+    onTertiaryContainer = CafeText,
+    background = CafeBackground,
+    onBackground = CafeText,
+    surface = CafeSurface,
+    onSurface = CafeText,
+    surfaceVariant = CafeSurfaceVariant,
+    onSurfaceVariant = CafeMutedText
 )
 
 @Composable
 fun Uam_CafeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
